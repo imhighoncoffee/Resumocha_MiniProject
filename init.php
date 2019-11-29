@@ -107,9 +107,14 @@ if ((isset($_POST["email"])) && (isset($_POST["pass"])) && !empty($_POST["email"
     }
 </style>
 
-<body background="img/bg.png" style="display: flex; align-items: center; height: -webkit-fill-available;justify-content: center;">
+<body style="display: flex; align-items: center; height: -webkit-fill-available;justify-content: center; background-color:#f7f7f7">
+    <!-- background="img/bg.png"  -->
+    <!-- <div class="welcome d-flex justify-content-center flex-column">
+        <div class="inner-wrapper mt-auto mb-auto"> -->
 
-    <div class="card col-lg-5 col-md-6 col-sm-12">
+
+
+    <div class="card col-lg-5 col-md-7 col-sm-12 ">
         <div class="card-body">
             <div class="wrapper">
                 <div class="container-fluid">
@@ -151,19 +156,24 @@ if ((isset($_POST["email"])) && (isset($_POST["pass"])) && !empty($_POST["email"
                                 <div class="col-md-5">
                                     <input type="submit" class="btn btn-primary btn-lg btn-pill" value="Login">
                                     <!-- Trigger the modal with a button -->
-                                    <button type="button" class="btn btn-success btn-lg btn-pill" data-toggle="modal" data-target="#myModal">Register</button>
+                                    <button type="button" class="btn btn-primary btn-pill btn-lg btn-success" data-toggle="modal" data-target="#myModal">
+                                        Register
+                                    </button>
+                                    <!-- <button type="button" class="btn btn-success btn-lg btn-pill" data-toggle="modal" data-target="#myModal">Register</button> -->
 
                                     <!-- Modal -->
-                                    <div class="modal fade" id="myModal" role="dialog">
-                                        <div class="modal-dialog modal-sm">
+                                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+                                        <div class="modal-dialog " role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                    <h4 class="modal-title">Register as</h4>
+                                                    <h5 style="font-size:18px" class="modal-title" id="exampleModalLabel">Register As</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">×</span>
+                                                    </button>
                                                 </div>
-                                                <div class="modal-body" align="center">
-                                                    <button onclick="location.href='RecruiterSignup.php'" type="button" class="btn btn-danger btn-lg btn-pill" data-toggle="modal" data-target="#myModal">Recruiter</button>
-                                                    <button onclick="location.href='UserSignUp.php'" type="button" class="btn btn-warning btn-lg btn-pill" data-toggle="modal" data-target="#myModal">User</button>
+                                                <div class="modal-body" style="display: flex; justify-content :space-around; padding-left:100px;padding-right:100px;">
+                                                    <button onclick="location.href='RecruiterSignup.php'" type="button" class="btn btn-primary btn-lg btn-pill" data-toggle="modal" data-target="#myModal" style="padding-left:30px;padding-right:30px;">Recruiter</button>
+                                                    <button onclick="location.href='UserSignUp.php'" type="button" class="btn btn-secondary btn-lg btn-pill" data-toggle="modal" style="padding-left:40px;padding-right:40px;" data-target="#myModal"> User </button>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-default btn-pill" data-dismiss="modal">Close</button>

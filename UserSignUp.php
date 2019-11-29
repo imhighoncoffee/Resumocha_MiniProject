@@ -14,7 +14,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $input_email = trim($_POST["email"]);
     if (empty($input_email)) {
         $email_err = "Please enter a email.";
-    } elseif (!filter_var($input_email, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => "/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/")))) {
+    } elseif (!filter_var($input_email, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" =>
+    "/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/")))) {
         $email_err = "Please enter a valid email.";
     } else {
         $email = $input_email;
@@ -45,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $input_phone = trim($_POST["phone"]);
     if (empty($input_phone)) {
         $phone_err = "Please enter a phone number.";
-    } elseif (!filter_var($input_phone, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => "/^[0-9]*$/")))) {
+    } elseif (!filter_var($input_phone, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => "/^[0-9]{10}$/")))) {
         $phone_err = "Please enter a valid phone number.";
     } else {
         $phone = $input_phone;
@@ -112,8 +113,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="css/shards-demo.min.css?v=3.0.0">
 </head>
 
-<body background="img/bg.png">
-    <div class="card col-lg-6 col-md-6 col-sm-12" style="margin-top:1.5%">
+<body style="background-color:#f7f7f7; display: flex; align-items: center; height: -webkit-fill-available;justify-content: center;">
+    <div class="card col-lg-6 col-md-6 col-sm-12">
         <div class="card-body">
             <div class="wrapper">
                 <div class="container-fluid">

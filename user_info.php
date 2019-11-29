@@ -237,186 +237,186 @@ if (isset($_FILES['resume'])) {
     </script>
 </head>
 
-<body background="img/bg.png">
-    
-    <div class="card col-lg-6 col-md-6 col-sm-12" style = "margin-top:6%">
-    <div class="card-body">
-    <div class="wrapper">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="page-header clearfix">
-                        <h2 class="pull-left">Your Details</h2>
-                        <button type="button" class="btn btn-danger btn-lg pull-right btn-pill" data-toggle="modal" data-target="#myModalDelete"> <?php echo "Delete Account" ?></button>
-                        <button type="button" class="btn btn-success btn-lg pull-right btn-pill" data-toggle="modal" data-target="#myModalResume" style="margin-right: 15px;"> <?php echo $resume_mode ?></button>
-                        <button type="button" class="btn btn-success btn-lg pull-right btn-pill" data-toggle="modal" data-target="#myModalPic" style="margin-right: 15px;"> <?php echo $dp_mode ?></button>
-                        <div class="modal fade" id="myModalResume" role="dialog">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close btn btn-lg btn-pill" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Upload your Resume</h4>
-                                    </div>
-                                    <div class="modal-body" align="center">
-                                        <form action="" method="POST" enctype="multipart/form-data">
-                                            <input type="file" name="resume" class="btn btn-info btn-lg btn-pill" /><br>
-                                            <input type="submit" class="btn btn-success btn-lg btn-pill" /></form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default btn-lg" data-dismiss="modal">Close</button>
+<body style="display: flex; align-items: center; height: -webkit-fill-available;justify-content: center; background-color:#f7f7f7">
+
+    <div class="card col-lg-6 col-md-6 col-sm-12">
+        <div class="card-body">
+            <div class="wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="page-header clearfix">
+                                <h2 class="pull-left">Your Details</h2>
+                                <button type="button" class="btn btn-danger btn-lg pull-right btn-pill" data-toggle="modal" data-target="#myModalDelete"> <?php echo "Delete Account" ?></button>
+                                <button type="button" class="btn btn-success btn-lg pull-right btn-pill" data-toggle="modal" data-target="#myModalResume" style="margin-right: 15px;"> <?php echo $resume_mode ?></button>
+                                <button type="button" class="btn btn-success btn-lg pull-right btn-pill" data-toggle="modal" data-target="#myModalPic" style="margin-right: 15px;"> <?php echo $dp_mode ?></button>
+                                <div class="modal fade" id="myModalResume" role="dialog">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close btn btn-lg btn-pill" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Upload your Resume</h4>
+                                            </div>
+                                            <div class="modal-body" align="center">
+                                                <form action="" method="POST" enctype="multipart/form-data">
+                                                    <input type="file" name="resume" class="btn btn-info btn-lg btn-pill" /><br>
+                                                    <input type="submit" class="btn btn-success btn-lg btn-pill" /></form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default btn-lg" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
 
-                        <div class="modal fade" id="myModalDelete" role="dialog">
-                            <div class="modal-dialog modal-sm">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Are you really sure you want to delete your account?</h4>
-                                    </div>
-                                    <div class="modal-body" align="center">
-                                        <form action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>" method="post">
-                                            <input type='text' name='meh' style="display:none" />
-                                            <input type="submit" class="btn btn-danger btn-lg btn-pill" style="margin-right: 15px;" value="Yes" />
-                                            <button type="button" class="btn btn-warning btn-lg btn-pill" data-dismiss="modal">No</button></form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="modal fade" id="myModalPic" role="dialog">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Upload your Photo</h4>
-                                    </div>
-                                    <div class="modal-body" align="center">
-                                        <form action="" method="POST" enctype="multipart/form-data">
-                                            <input type="file" name="image" class="btn btn-info btn-pill" /><br>
-                                            <input type="submit" class="btn btn-success btn-pill" /></form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default btn-pill" data-dismiss="modal">Close</button>
+                                <div class="modal fade" id="myModalDelete" role="dialog">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Are you really sure you want to delete your account?</h4>
+                                            </div>
+                                            <div class="modal-body" align="center">
+                                                <form action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>" method="post">
+                                                    <input type='text' name='meh' style="display:none" />
+                                                    <input type="submit" class="btn btn-danger btn-lg btn-pill" style="margin-right: 15px;" value="Yes" />
+                                                    <button type="button" class="btn btn-warning btn-lg btn-pill" data-dismiss="modal">No</button></form>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
 
-                        <?php
-                        // Include config file
-                        require_once "config.php";
-                        if ($dp_mode == "Add Profile Pic") {
-                            $img_src = "img/default.jpg";      //Profile pic
-                        } else {
-                            // Attempt select query execution
-                            $sql = "select * from images WHERE uid=?";
+                                <div class="modal fade" id="myModalPic" role="dialog">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Upload your Photo</h4>
+                                            </div>
+                                            <div class="modal-body" align="center">
+                                                <form action="" method="POST" enctype="multipart/form-data">
+                                                    <input type="file" name="image" class="btn btn-info btn-pill" /><br>
+                                                    <input type="submit" class="btn btn-success btn-pill" /></form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default btn-pill" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                            if ($stmt = $mysqli->prepare($sql)) {
-                                // Bind variables to the prepared statement as parameters
-                                $stmt->bind_param("s", $_uid);
-                                $_uid = $uid;
-
-                                // Attempt to execute the prepared statement
-                                if ($stmt->execute()) {
-                                    $result = $stmt->get_result();
-
-                                    if ($result->num_rows == 1) {
-                                        /* Fetch result row as an associative array. Since the result set contains only one row, we don't need to use while loop */
-                                        $row = $result->fetch_array(MYSQLI_ASSOC);
-
-                                        // Retrieve individual field value
-                                        $img_src = $row["image_path"];
-                                        mysqli_free_result($result);
-                                    } else {
-                                        echo "<p class='lead'><em>ERROR:Multiple records were found.</em></p>";
-                                    }
+                                <?php
+                                // Include config file
+                                require_once "config.php";
+                                if ($dp_mode == "Add Profile Pic") {
+                                    $img_src = "img/default.jpg";      //Profile pic
                                 } else {
-                                    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
-                                }
-                            }
-                        }
-                        if ($resume_mode == "Add Resume") {      //resume
-                            echo "";
-                        } else {
-                            // Attempt select query execution
-                            $sql = "select * from resumes WHERE uid=?";
+                                    // Attempt select query execution
+                                    $sql = "select * from images WHERE uid=?";
 
-                            if ($stmt = $mysqli->prepare($sql)) {
-                                // Bind variables to the prepared statement as parameters
-                                $stmt->bind_param("s", $_uid);
-                                $_uid = $uid;
+                                    if ($stmt = $mysqli->prepare($sql)) {
+                                        // Bind variables to the prepared statement as parameters
+                                        $stmt->bind_param("s", $_uid);
+                                        $_uid = $uid;
 
-                                // Attempt to execute the prepared statement
-                                if ($stmt->execute()) {
-                                    $result = $stmt->get_result();
+                                        // Attempt to execute the prepared statement
+                                        if ($stmt->execute()) {
+                                            $result = $stmt->get_result();
 
-                                    if ($result->num_rows == 1) {
-                                        /* Fetch result row as an associative array. Since the result set contains only one row, we don't need to use while loop */
-                                        $row = $result->fetch_array(MYSQLI_ASSOC);
+                                            if ($result->num_rows == 1) {
+                                                /* Fetch result row as an associative array. Since the result set contains only one row, we don't need to use while loop */
+                                                $row = $result->fetch_array(MYSQLI_ASSOC);
 
-                                        // Retrieve individual field value
-                                        $resume_src = $row["link"];
-                                        mysqli_free_result($result);
-                                    } else {
-                                        echo "<p class='lead'><em>ERROR:Multiple records were found.</em></p>";
+                                                // Retrieve individual field value
+                                                $img_src = $row["image_path"];
+                                                mysqli_free_result($result);
+                                            } else {
+                                                echo "<p class='lead'><em>ERROR:Multiple records were found.</em></p>";
+                                            }
+                                        } else {
+                                            echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+                                        }
                                     }
-                                } else {
-                                    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
                                 }
-                            }
-                        }
-                        ?>
+                                if ($resume_mode == "Add Resume") {      //resume
+                                    echo "";
+                                } else {
+                                    // Attempt select query execution
+                                    $sql = "select * from resumes WHERE uid=?";
 
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <img src=<?php echo $img_src ?> width="200px"></div>
-                    <div class="col-md-8">
-                        <h2><b><?php echo $name ?></b></h2><br>
-                        <h5><?php echo "Email : " . $email ?></h5>
-                        <h5><?php echo "Phone : " . $phone ?></h5>
-                        <h5><?php echo "DOB   : " . $dob ?></h5>
-                        <h5><?php echo "Gender: " . $sex ?></h5>
-                    </div>
-                </div>
+                                    if ($stmt = $mysqli->prepare($sql)) {
+                                        // Bind variables to the prepared statement as parameters
+                                        $stmt->bind_param("s", $_uid);
+                                        $_uid = $uid;
 
-                <div class="row">
-                    <br>
-                    <div class="col-md-4">
-                        <!-- <button type="submit" formaction="\resume-generator\index.html" class="btn btn-primary btn-block">Make Resume</button> -->
-                        <a href="resume-generator\index.html" class=" btn btn-primary btn-block btn-lg btn-pill">Make Resume</a>
-                    </div>
-                </div>
+                                        // Attempt to execute the prepared statement
+                                        if ($stmt->execute()) {
+                                            $result = $stmt->get_result();
+
+                                            if ($result->num_rows == 1) {
+                                                /* Fetch result row as an associative array. Since the result set contains only one row, we don't need to use while loop */
+                                                $row = $result->fetch_array(MYSQLI_ASSOC);
+
+                                                // Retrieve individual field value
+                                                $resume_src = $row["link"];
+                                                mysqli_free_result($result);
+                                            } else {
+                                                echo "<p class='lead'><em>ERROR:Multiple records were found.</em></p>";
+                                            }
+                                        } else {
+                                            echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+                                        }
+                                    }
+                                }
+                                ?>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src=<?php echo $img_src ?> width="200px"></div>
+                            <div class="col-md-8">
+                                <h2><b><?php echo $name ?></b></h2><br>
+                                <h5><?php echo "Email : " . $email ?></h5>
+                                <h5><?php echo "Phone : " . $phone ?></h5>
+                                <h5><?php echo "DOB   : " . $dob ?></h5>
+                                <h5><?php echo "Gender: " . $sex ?></h5>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <br>
+                            <div class="col-md-4">
+                                <!-- <button type="submit" formaction="\resume-generator\index.html" class="btn btn-primary btn-block">Make Resume</button> -->
+                                <a href="resume-generator\index.html" class=" btn btn-primary btn-block btn-lg btn-pill" target="_blank">Make Resume</a>
+                            </div>
+                        </div>
 
 
-                <div class="row">
-                    <br>
-                    <div class="col-md-12">
-                        <?php if (($resume_mode == "Add Resume")) {
-                            echo ' <a href="create.php" class="btn btn-danger disabled btn-block btn-lg btn-pill" >Resume not Uploaded</a><br>';
-                        } else {
-                            echo '<a href="' . $resume_src . '" class="btn btn-info  btn-block btn-lg btn-pill"  target="_blank" >Veiw Resume</a><br>';
-                        } ?>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <?php if (($resume_mode == "Add Resume") || ($dp_mode == "Add Profile Pic")) {
-                            echo '<div class= "alert alert-danger">
+                        <div class="row">
+                            <br>
+                            <div class="col-md-12">
+                                <?php if (($resume_mode == "Add Resume")) {
+                                    echo ' <a href="create.php" class="btn btn-danger disabled btn-block btn-lg btn-pill" >Resume not Uploaded</a><br>';
+                                } else {
+                                    echo '<a href="' . $resume_src . '" class="btn btn-info  btn-block btn-lg btn-pill"  target="_blank" >Veiw Resume</a><br>';
+                                } ?>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <?php if (($resume_mode == "Add Resume") || ($dp_mode == "Add Profile Pic")) {
+                                    echo '<div class= "alert alert-danger">
                         You havent completed your profile!</div>';
-                        } else {
-                            echo '<div class= "alert alert-success">
+                                } else {
+                                    echo '<div class= "alert alert-success">
                             Your Profile is Complete.</div>';
-                        } ?>
+                                } ?>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        </div>
         </div>
 </body>
 
