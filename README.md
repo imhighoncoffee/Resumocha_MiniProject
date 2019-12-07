@@ -1,3 +1,3 @@
 # Resumocha_MiniProject
-A repo for our 5th sem dbms mini project
+A repo for our 7th sem web mini project
 
