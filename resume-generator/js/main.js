@@ -1,7 +1,5 @@
 document.querySelector('#page').contentEditable = true;
 
-// defaultTemplateVars = ["fontDroid", "caseNormal", "titleRuled", "ruleAbove", "imageShow", "rollShow", "course1", "tableShow", "edyearFirst", "experience1", "projects1"]
-
 $('.toggle-option').click(function () {
 	toggleType = $(this).attr('data-toggle');
 	toggleValue = $(this).attr('id');
@@ -21,33 +19,15 @@ $('.toggle-option').click(function () {
 	}
 });
 
-// $('input[name="sectionToggle"]').change(function () {
-// 	toggleSection($(this).val(), $(this).is(':checked'));
-// });
-
-
 function template(value) {
-	if (value == 'default') {
-		// $('#defaultTemplateBtn').removeClass('btn-default').addClass('btn-danger');
-		// $('#customTemplateBtn').removeClass('btn-danger').addClass('btn-default');
+	if (value == 'default')
 		$('#customTemplateOptions').hide();
-		// for (i = 0; i < defaultTemplateVars.length; i++)
-		// 	$('#' + defaultTemplateVars[i]).click();
-	}
-	else {
-		// $('#customTemplateBtn').removeClass('btn-default').addClass('btn-danger');
-		// $('#defaultTemplateBtn').removeClass('btn-danger').addClass('btn-default');
+	else
 		$('#customTemplateOptions').show();
-	}
+
 }
 
-// function toggleSection(sectionName, toggleState) {
-// 	if (toggleState == true)
-// 		$('input[value="' + sectionName + '"]').attr('checked', 'true');
-// 	else
-// 		$('input[value="' + sectionName + '"]').removeAttr('checked');
-// 	$('#' + sectionName).toggle();
-// }
+
 
 function changeTemplate(toggleType, toggleValue) {
 	switch (toggleType) {
@@ -61,6 +41,7 @@ function changeTemplate(toggleType, toggleValue) {
 				$('#image_box').css('margin-top', '25px');
 			}
 			break;
+
 		case 'contact':
 			if (toggleValue == 'contact3') {
 				$('#contactLink1').hide();
@@ -75,6 +56,7 @@ function changeTemplate(toggleType, toggleValue) {
 				$('#contactLink2').show();
 			}
 			break;
+
 		case 'margin':
 			if (toggleValue == 'margin1')
 				$('#page').css('padding', '0.2cm 1cm 1cm 1cm');
@@ -89,6 +71,7 @@ function changeTemplate(toggleType, toggleValue) {
 			else if (toggleValue == 'margin6')
 				$('#page').css('padding', '0.2cm 1.5cm 1cm 1.5cm');
 			break;
+
 		case 'line':
 			if (toggleValue == 'line1')
 				$('#page').css('line-height', '1.1em');
@@ -103,20 +86,10 @@ function changeTemplate(toggleType, toggleValue) {
 			else if (toggleValue == 'line6')
 				$('#page').css('line-height', '1.6em');
 			break;
-		case 'column':
-			if (toggleValue == 'column1')
-				$('.table tbody tr td:nth-child(1)').toggleClass('text-center');
-			else if (toggleValue == 'column2')
-				$('.table tbody tr td:nth-child(2)').toggleClass('text-center');
-			else if (toggleValue == 'column3')
-				$('.table tbody tr td:nth-child(3)').toggleClass('text-center');
-			else if (toggleValue == 'column4')
-				$('.table tbody tr td:nth-child(4)').toggleClass('text-center');
-			break;
 
 		case 'font':
 			if (toggleValue == 'fontVerdanaSans')
-				$('#page').removeClass('droid').removeClass('roboto').removeClass('verdana-serif').addClass('verdana-san	s');
+				$('#page').removeClass('droid').removeClass('roboto').removeClass('verdana-serif').addClass('verdana-sans');
 			else if (toggleValue == 'fontVerdanaSerif')
 				$('#page').removeClass('verdana-sans').removeClass('droid').removeClass('roboto').addClass('verdana-serif');
 			else if (toggleValue == 'fontRoboto')
@@ -124,12 +97,14 @@ function changeTemplate(toggleType, toggleValue) {
 			else if (toggleValue == 'fontDroid')
 				$('#page').removeClass('roboto').removeClass('verdana-serif').removeClass('verdana-sans').addClass('droid');
 			break;
+
 		case 'case':
 			if (toggleValue == 'caseNormal')
 				$('.section-title').removeClass('uppercase');
 			else
 				$('.section-title').addClass('uppercase');
 			break;
+
 		case 'title':
 			if (toggleValue == 'titleRuled') {
 				$('.section-title').removeClass('shaded');
@@ -140,6 +115,7 @@ function changeTemplate(toggleType, toggleValue) {
 				$('.section-title').addClass('shaded');
 			}
 			break;
+
 		case 'rule':
 			if (toggleValue == 'ruleAbove') {
 				$('.section-title').removeClass('rule-below');
@@ -161,6 +137,7 @@ function changeTemplate(toggleType, toggleValue) {
 				$('#info').css('margin-left', '20px');
 			}
 			break;
+
 		case 'roll':
 			if (toggleValue == 'rollShow') {
 				$('#contentRoll').show();
@@ -171,6 +148,7 @@ function changeTemplate(toggleType, toggleValue) {
 				$('#info').css('margin-top', '10px');
 			}
 			break;
+
 		case 'course':
 			if (toggleValue == 'course1') {
 				$('#contentBranch').hide();
@@ -181,6 +159,7 @@ function changeTemplate(toggleType, toggleValue) {
 				$('#contentCourse').text('B.Tech undergraduate');
 			}
 			break;
+
 		case 'table':
 			if (toggleValue == 'tableShow') {
 				$('#educationTable').removeClass('borderless');
@@ -191,6 +170,7 @@ function changeTemplate(toggleType, toggleValue) {
 				$('#educationTable').addClass('borderless');
 			}
 			break;
+
 		case 'edyear':
 			if (toggleValue == 'edyearFirst') {
 				$("#educationTable tr").each(function () {
@@ -213,6 +193,7 @@ function changeTemplate(toggleType, toggleValue) {
 				document.getElementById('column4').className = temp;
 			}
 			break;
+
 		case 'experience':
 			if (toggleValue == 'experience1') {
 				$("#sectionExperience .title , #sectionExperience .time").css('display', 'inline-block');
@@ -225,6 +206,7 @@ function changeTemplate(toggleType, toggleValue) {
 				$("#sectionExperience .link").hide();
 			}
 			break;
+
 		case 'projects':
 			if (toggleValue == 'projects1') {
 				$("#sectionProjects .title , #sectionProjects .time").css('display', 'inline-block');
@@ -240,15 +222,6 @@ function changeTemplate(toggleType, toggleValue) {
 	}
 }
 
-// function insertList() {
-// 	node = getSelectionContainerElement();
-// 	var ul = document.createElement("ul");
-// 	ul.className = 'decimal';
-// 	ul.style.marginLeft = '0px';
-// 	ul.innerHTML = "<li>Sub-point 1 : Description</li><li>Sub-point 2 : Description</li>";
-// 	insertAfter(node, ul);
-// }
-
 function decreaseIndent() {
 	node = getSelectionContainerElement();
 	while (node.tagName != 'UL')
@@ -263,13 +236,15 @@ function increaseIndent() {
 	node.style.paddingLeft = parseInt(window.getComputedStyle(node).getPropertyValue("padding-left")) + 5;
 }
 
-// function changeListStyle(value) {
-// 	node = getSelectionContainerElement();
-// 	while (node.tagName != 'UL')
-// 		node = node.parentNode;
-// 	node.className = value;
 
-// }
+
+
+
+
+
+
+
+
 
 
 function getSelectionContainerElement() {
@@ -285,8 +260,7 @@ function getSelectionContainerElement() {
 				range = sel.getRangeAt(0);
 		}
 		else {
-			// Old WebKit selection object has no getRangeAt, so
-			// create a range from other selection properties
+
 			range = document.createRange();
 			range.setStart(sel.anchorNode, sel.anchorOffset);
 			range.setEnd(sel.focusNode, sel.focusOffset);
@@ -303,7 +277,3 @@ function getSelectionContainerElement() {
 		}
 	}
 }
-
-// function insertAfter(referenceNode, newNode) {
-// 	referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
-// }

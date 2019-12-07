@@ -15,16 +15,18 @@ if ((isset($_POST["email"])) && (isset($_POST["pass"])) && !empty($_POST["email"
     $input_email = trim($_POST["email"]);
     if (empty($input_email)) {
         $email_err = "Please enter a email.";
-    } elseif (!filter_var($input_email, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => "/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/")))) {
+    } else if (!filter_var($input_email, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => "/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/")))) {
         $email_err = "Please enter a valid email.";
     } else {
         $email = $input_email;
     }
-
+    // "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})"
     // Validate pass 
     $input_pass = trim($_POST["pass"]);
     if (empty($input_pass)) {
-        $name_err = "Please enter a pass.";
+        $name_err = "Please enter the password.";
+    } else if (!filter_var($input_pass, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => "/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/")))) {
+        $pass_err = "Please enter a valid Password.";
     } else {
         $pass = $input_pass;
     }
@@ -81,8 +83,8 @@ if ((isset($_POST["email"])) && (isset($_POST["pass"])) && !empty($_POST["email"
     // Close connection
     $mysqli->close();
 }
-// else 
-//     echo "<script> alert('Enter Credentials')</script>";
+// else
+//     $res_err = "Please enter your credentials.";
 ?>
 
 <!DOCTYPE html>
@@ -194,6 +196,9 @@ if ((isset($_POST["email"])) && (isset($_POST["pass"])) && !empty($_POST["email"
                                     } else if (($res_err == "You havent registered! Or Email is invalid")) {
                                         echo '<div class= "alert alert-danger">
                             You havent registered! Or Email is invalid.</div>';
+                                    } else if (($res_err == "Please enter your credentials.")) {
+                                        echo '<div class= "alert alert-danger">
+                                        Please enter your credentials.</div>';
                                     }
                                     ?>
                             </form>

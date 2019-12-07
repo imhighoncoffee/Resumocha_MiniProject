@@ -24,6 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $input_pass = trim($_POST["pass"]);
     if (empty($input_pass)) {
         $pass_err = "Please enter password.";
+    } elseif (!filter_var($input_pass, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => "/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/")))) {
+        $pass_err = "Please enter a valid Password. Must be 8 characters long & should atleast contain 1 lowercase, 1 uppercase, 1 numeric, one special character.";
     } else {
         $pass = $input_pass;
     }
@@ -161,34 +163,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <span class="help-block"><?php echo $position_err; ?></span>
                                 </div>
 
-                                <!-- <a href="index.html" class="btn btn-success" >Register</a> -->
-                                <!-- <div> -->
+
                                 <input type="submit" class="btn btn-primary btn-lg btn-pill" value="Sign up">
                                 <a href="init.php" class="btn btn-default btn-lg btn-pill">Cancel</a>
                             </form>
                             <br><br>
-                            <!-- Trigger the modal with a button -->
-                            <!-- <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Register</button> -->
 
-                            <!-- Modal
-                                <div class="modal fade" id="myModal" role="dialog">
-                                    <div class="modal-dialog modal-sm">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">Register as</h4>
-                                        </div>
-                                        <div class="modal-body" align ="center" >
-                                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Recruiter</button>
-                                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal">User</button>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div> -->
-                            <!-- </div> -->
 
 
                         </div>

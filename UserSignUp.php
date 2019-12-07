@@ -25,6 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $input_pass = trim($_POST["pass"]);
     if (empty($input_pass)) {
         $pass_err = "Please enter an pass.";
+    } elseif (!filter_var($input_pass, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => "/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/")))) {
+        $pass_err = "Please enter a valid Password. Must be 8 characters long & should atleast contain 1 lowercase, 1 uppercase, 1 numeric, one special character.";
     } else {
         $pass = $input_pass;
     }
